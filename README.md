@@ -1,13 +1,17 @@
 
+## agentic ai
+
+- single agent vs multi-agent
 
 
-## programming/ development/tech stack
+## programming/development/tech stack
 
 - programming langauges: python, javascript
 - agentic frameworks: Langchain, LangGraph, CrewAI, Semantic Kernel, AutoGen, OpenAI SDK agents, HuggingFace libraries, Amazon Bedrock
 - structured output/input: Pydantic, JSON
-- streaming : Webhooks
+- streaming : Webhook, REST API
 - session management: history, context of chat, Storage to S3/DynamoDB for each session
+
 
 
 ## llm concepts/best-practices
@@ -25,6 +29,26 @@
 - session management: history, context of chat, Storage to S3/DynamoDB for each session
 - agentic patterns
 - tooling, API call
+- async calls
+
+## llm evaluation/testing
+
+- llm evaluations, jsonl
+- human-in-the-loop review, A/B testing,  
+- continuous offline/online evals (Local models, Closed Models, LLM as a judge, Open source models)
+- Evaluation: Cost, Token, latency, benchmarking different models
+
+## llm observability
+
+- instrument telemetry (traces, token/cost, latency), 
+- build dashboards (Grafana/CloudWatch), 
+
+
+## operate reliably at scale: 
+- implement caching, 
+- rate-limit management, 
+- queueing, idempotency, and backoff; 
+- proactively detect drift and degradation.
 
 ## rapid prototyping
 
@@ -48,3 +72,10 @@
 - SageMaker for custom model hosting.
 - Streaming : Webhook APIs
 - Deployment: lambda, ECS/EC2 
+
+## MLOps/LLMOps: 
+- automate CI/CD (GitOps), 
+- containerization (Docker/Kubernetes), 
+- infra-as-code, secrets/IAM, 
+- blue green/rollbacks and data/feature pipelines.
+
