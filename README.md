@@ -1,5 +1,5 @@
 
-## agentic ai
+# llm engineering
 
 - single agent vs multi-agent
 
@@ -11,7 +11,8 @@
 - structured output/input: Pydantic, JSON
 - streaming : Webhook, REST API
 - session management: history, context of chat, Storage to S3/DynamoDB for each session
-
+- platforms: aws, hugging face
+- llms : OpenAI, Gemini, Anthropic, Groq, Grok, ollama, llamma
 
 
 ## llm concepts/best-practices
@@ -30,6 +31,20 @@
 - agentic patterns
 - tooling, API call
 - async calls
+- retry mechanism on failing
+
+## model benchmarking, model comparision (choosing a best model at hand)
+
+- artificial analytics, vellum, scale.com, huggingface, live bench
+- parameters to compare: 
+    - parameters, 
+    - context length/window, 
+    - inference cost (input & output token cost)
+    - pricing
+    - latency
+    - cutoff
+    - library/framework available
+
 
 ## llm evaluation/testing
 
@@ -45,7 +60,7 @@
 
 
 ## operate reliably at scale: 
-- implement caching, 
+- implement caching, prompt caching
 - rate-limit management, 
 - queueing, idempotency, and backoff; 
 - proactively detect drift and degradation.
@@ -62,6 +77,9 @@
 - indexing, and 
 - retrieval with evaluation (precision/recall, groundedness, hallucination checks), 
 - guardrails, and citations.
+- graph RAG
+- agentic RAG
+- vector store (chroma, FAISS, S3 VectorStore)
 
 
 ## Productionize on AWS: 
@@ -78,4 +96,23 @@
 - containerization (Docker/Kubernetes), 
 - infra-as-code, secrets/IAM, 
 - blue green/rollbacks and data/feature pipelines.
+
+## coding
+
+- cursor
+
+# new
+
+- mcp
+
+
+## low-level llm 
+
+- tokenizer
+- quantization
+- finetuning 
+
+
+
+
 
