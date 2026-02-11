@@ -1,118 +1,97 @@
+# 🚀 LLM Engineering: Roadmap & Reference
 
-# llm engineering
+A comprehensive guide to building, evaluating, and scaling production-grade LLM applications. This repository serves as a master reference for modern AI engineering, from agentic patterns to cloud-scale infrastructure.
 
-- single agent vs multi-agent
+---
 
+## 📑 Table of Contents
+* [Tech Stack & Development](#-tech-stack--development)
+* [LLM Concepts & Best Practices](#-llm-concepts--best-practices)
+* [Evaluation & Benchmarking](#-evaluation--benchmarking)
+* [High-Quality RAG](#-high-quality-rag)
+* [Observability & Reliability](#-observability--reliability)
+* [MLOps & AWS Productionization](#-mlops--aws-productionization)
+* [Low-Level Foundations](#-low-level-foundations)
 
-## programming/development/tech stack
+---
 
-- programming langauges: python, javascript
-- agentic frameworks: Langchain, LangGraph, CrewAI, Semantic Kernel, AutoGen, OpenAI SDK agents, HuggingFace libraries, Amazon Bedrock
-- structured output/input: Pydantic, JSON
-- streaming : Webhook, REST API
-- session management: history, context of chat, Storage to S3/DynamoDB for each session
-- platforms: aws, hugging face
-- llms : OpenAI, Gemini, Anthropic, Groq, Grok, ollama, llamma
+## 🛠 Tech Stack & Development
 
+### Languages & Frameworks
+* **Languages:** Python, JavaScript
+* **Agentic Frameworks:** LangChain, LangGraph, CrewAI, Semantic Kernel, AutoGen, OpenAI SDK, HuggingFace, Amazon Bedrock
+* **Protocols:** Model Context Protocol (MCP)
 
-## llm concepts/best-practices
+### Data & State
+* **Structured I/O:** Pydantic, JSON
+* **Communication:** Webhooks, REST API, Async calls
+* **Session Management:** Chat history, context window management, Storage (S3/DynamoDB)
 
-- evaluation frameworks (guardrails, groundedness, hallucination checks).
-- design single/multi-agent architectures
-- define agent roles (planner, researcher, retriever, executor, reviewer), 
-- toolboxes, 
-- handoffs, 
-- memory strategy (short/long-term)
-- supervisor policies for safe collaboration.
-- structured output/input: Pydantic, JSON
-- streaming : Webhooks
-- prompting: single shot prompting, multi-shot prompting
-- session management: history, context of chat, Storage to S3/DynamoDB for each session
-- agentic patterns
-- tooling, API call
-- async calls
-- retry mechanism on failing
+### Prototyping Tools
+* **UI/Workflow:** Gradio, Streamlit, n8n
+* **IDE:** Cursor
 
-## model benchmarking, model comparision (choosing a best model at hand)
+---
 
-- artificial analytics, vellum, scale.com, huggingface, live bench
-- parameters to compare: 
-    - parameters, 
-    - context length/window, 
-    - inference cost (input & output token cost)
-    - pricing
-    - latency
-    - cutoff
-    - library/framework available
+## 🧠 LLM Concepts & Best Practices
 
+### Agentic Architectures
+* **Patterns:** Single-agent vs. Multi-agent systems.
+* **Roles:** Planner, Researcher, Retriever, Executor, Reviewer.
+* **Orchestration:** Handoffs, supervisor policies, and tool-use (API calling).
+* **Memory:** Short-term vs. Long-term memory strategies.
 
-## llm evaluation/testing
+### Prompt Engineering
+* **Techniques:** Single-shot, multi-shot, and chain-of-thought prompting.
+* **Logic:** Retry mechanisms on failure, idempotency, and backoff strategies.
 
-- llm evaluations, jsonl
-- human-in-the-loop review, A/B testing,  
-- continuous offline/online evals (Local models, Closed Models, LLM as a judge, Open source models)
-- Evaluation: Cost, Token, latency, benchmarking different models
+---
 
-## llm observability
+## 📊 Evaluation & Benchmarking
 
-- instrument telemetry (traces, token/cost, latency), 
-- build dashboards (Grafana/CloudWatch), 
+### Model Comparison Criteria
+| Metric | Description |
+| :--- | :--- |
+| **Context Window** | Maximum token limit for input and output. |
+| **Inference Cost** | Pricing per 1M tokens (Input/Output). |
+| **Performance** | Latency (TTFT) and throughput. |
+| **Knowledge Cutoff** | The recency of the training data. |
 
+### Evaluation Frameworks
+* **Tools:** Artificial Analysis, Vellum, Scale.com, HuggingFace, Live Bench.
+* **Testing:** Human-in-the-loop (HITL), A/B testing, LLM-as-a-judge.
+* **Checks:** Guardrails, groundedness, and hallucination detection.
 
-## operate reliably at scale: 
-- implement caching, prompt caching
-- rate-limit management, 
-- queueing, idempotency, and backoff; 
-- proactively detect drift and degradation.
+---
 
-## rapid prototyping
+## 🔍 High-Quality RAG
+* **Pipeline:** Ingestion → Chunking → Embeddings → Indexing → Retrieval.
+* **Advanced Patterns:** Graph RAG, Agentic RAG.
+* **Vector Databases:** Chroma, FAISS, S3 VectorStore, OpenSearch.
+* **Verification:** Precision/Recall metrics and citation generation.
 
-- Gradio, n8n, Streamlit
+---
 
-## build high-quality RAG: 
+## ⚙️ Observability & Reliability
+* **Telemetry:** Instrumenting traces, token usage/costs, and latency.
+* **Monitoring:** Grafana and CloudWatch dashboards.
+* **Optimization:** Prompt caching and rate-limit management.
+* **Resilience:** Queueing, proactive drift detection, and degradation monitoring.
 
-- implement ingestion, 
-- chunking, 
-- embeddings, 
-- indexing, and 
-- retrieval with evaluation (precision/recall, groundedness, hallucination checks), 
-- guardrails, and citations.
-- graph RAG
-- agentic RAG
-- vector store (chroma, FAISS, S3 VectorStore)
+---
 
+## ☁️ MLOps & AWS Productionization
+* **Compute:** Lambda (Streaming/Webhooks), ECS, EC2, SageMaker (Custom hosting).
+* **AWS AI Services:** Bedrock (Agents, Knowledge Bases, Flows).
+* **Orchestration:** Step Functions, API Gateway.
+* **DevOps:** CI/CD (GitOps), Docker/Kubernetes, Infrastructure-as-Code (IaC), IAM/Secrets management.
 
-## Productionize on AWS: 
+---
 
-- leverage services like Bedrock (Agents/Knowledge Bases/Flows) or equivalent LLM platforms, 
-- Lambda, API Gateway, S3, DynamoDB, OpenSearch/Vector DB, 
-- Step Functions, and CloudWatch for tracing and alerts.
-- SageMaker for custom model hosting.
-- Streaming : Webhook APIs
-- Deployment: lambda, ECS/EC2 
+## 🔬 Low-Level Foundations
+* **Tokenization:** Deep dive into how models process text.
+* **Quantization:** Reducing model size for efficient inference.
+* **Fine-tuning:** Domain-specific model adaptation.
 
-## MLOps/LLMOps: 
-- automate CI/CD (GitOps), 
-- containerization (Docker/Kubernetes), 
-- infra-as-code, secrets/IAM, 
-- blue green/rollbacks and data/feature pipelines.
-
-## coding
-
-- cursor
-
-# new
-
-- mcp
-
-
-## low-level llm 
-
-- tokenizer
-- quantization
-- finetuning 
-
-
-
-
+---
 
